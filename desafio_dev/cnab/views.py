@@ -1,6 +1,6 @@
 import logging
 
-from cnab.usecases import convert_file_to_dict
+from cnab.usecases import convert_file_to_dict, save_file_data
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -16,6 +16,7 @@ def upload_file(request):
         file = cnab_file.read().decode("utf-8")
         
         data = convert_file_to_dict(file)
+        save_file_data(data)
         
 
     return render(

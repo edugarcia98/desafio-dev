@@ -34,9 +34,9 @@ class Transaction(models.Model):
     card = models.CharField(max_length=20, verbose_name="Card")
     store_owner = models.CharField(max_length=50, verbose_name="Store Owner")
     store_name = models.CharField(max_length=50, verbose_name="Store Name")
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=False)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.slug = slugify(self.store_name)
         super(Transaction, self).save(*args, **kwargs)
     
