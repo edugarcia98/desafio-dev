@@ -1,0 +1,14 @@
+<h1>CNAB Import</h1>
+
+<form method="post", enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if cnab_file %}
+    <script>alert("File uploaded!")</script>
+    {% endif %}
+
+    <input type="file" id="cnab-file", name="cnab-file">
+    <br>
+    <br>
+    <button type="submit">Import</button>
+</form>
