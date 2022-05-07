@@ -14,7 +14,7 @@ def convert_file_to_dict(file: str) -> dict:
 
             data = {
                 "transaction_type": int(line[0:1].strip()),
-                "datetime_occurrence": datetime.strptime(
+                "occurrence_date": datetime.strptime(
                     f"{line[1:9].strip()} - {line[42:48].strip()}",
                     "%Y%m%d - %H%M%S"
                 ),

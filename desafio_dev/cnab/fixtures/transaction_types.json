@@ -1,0 +1,74 @@
+[
+{
+    "model": "cnab.transactiontype",
+    "pk": 1,
+    "fields": {
+        "title": "Débito",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 2,
+    "fields": {
+        "title": "Boleto",
+        "state": "-"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 3,
+    "fields": {
+        "title": "Financiamento",
+        "state": "-"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 4,
+    "fields": {
+        "title": "Crédito",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 5,
+    "fields": {
+        "title": "Recebimento Empréstimo",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 6,
+    "fields": {
+        "title": "Vendas",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 7,
+    "fields": {
+        "title": "Recebimento TED",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 8,
+    "fields": {
+        "title": "Recebimento DOC",
+        "state": "+"
+    }
+},
+{
+    "model": "cnab.transactiontype",
+    "pk": 9,
+    "fields": {
+        "title": "Aluguel",
+        "state": "-"
+    }
+}
+]
