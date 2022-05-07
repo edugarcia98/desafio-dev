@@ -18,7 +18,6 @@ def upload_file(request):
         
         data = convert_file_to_dict(file)
         save_file_data(data)
-        
 
     return render(
         request,
