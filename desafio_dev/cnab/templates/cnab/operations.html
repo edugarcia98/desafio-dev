@@ -1,0 +1,40 @@
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<h1>{{store_name}}</h1>
+
+Dono: {{store_owner}}<br>
+CPF: {{cpf}}<br>
+
+<br><br>
+
+<table>
+    <tr>
+        <th>Transação</th>
+        <th>Valor</th>
+        <th>Cartão utilizado</th>
+        <th>Data</th>
+    </tr>
+    {% for item in queryset %}
+        <tr>
+            <td>{{item.transaction_type.title}}</td>
+            <td>{{item.value}}</td>
+            <td>{{item.card}}</td>
+            <td>{{item.occurrence_date|date:"Y/m/d H:i:s"}}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+
+Saldo em conta: {{balance}}
