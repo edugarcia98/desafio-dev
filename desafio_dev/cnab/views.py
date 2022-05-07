@@ -1,7 +1,9 @@
 import logging
 
+from cnab.usecases import convert_file_to_dict
 from django.http import HttpResponse
 from django.shortcuts import render
+
 
 logger = logging.getLogger(__name__)
 
@@ -10,6 +12,11 @@ def upload_file(request):
     if cnab_file := request.FILES.get("cnab-file"):
         message = f"Loaded {cnab_file}"
         logger.info(message)
+
+        file = cnab_file.read().decode("utf-8")
+        
+        data = convert_file_to_dict(file)
+        
 
     return render(
         request,
