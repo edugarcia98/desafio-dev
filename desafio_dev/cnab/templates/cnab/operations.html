@@ -1,4 +1,12 @@
 <style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #ededed;
+    }
+
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -12,29 +20,31 @@
     }
 </style>
 
-<h1>{{store_name}}</h1>
+<body>
+    <h1>{{store_name}}</h1>
 
-Dono: {{store_owner}}<br>
-CPF: {{cpf}}<br>
+    <p><b>Dono:</b> {{store_owner}}</p>
+    <p><b>CPF:</b> {{cpf}}</p>
 
-<br><br>
+    <br><br>
 
-<table>
-    <tr>
-        <th>Transação</th>
-        <th>Valor</th>
-        <th>Cartão utilizado</th>
-        <th>Data</th>
-    </tr>
-    {% for item in queryset %}
+    <table>
         <tr>
-            <td>{{item.transaction_type.title}}</td>
-            <td>{{item.value}}</td>
-            <td>{{item.card}}</td>
-            <td>{{item.occurrence_date|date:"Y/m/d H:i:s"}}</td>
+            <th>Transação</th>
+            <th>Valor</th>
+            <th>Cartão utilizado</th>
+            <th>Data</th>
         </tr>
-    {% endfor %}
-</table>
-<br>
+        {% for item in queryset %}
+            <tr>
+                <td>{{item.transaction_type.title}}</td>
+                <td>{{item.value}}</td>
+                <td>{{item.card}}</td>
+                <td>{{item.occurrence_date|date:"Y/m/d H:i:s"}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
 
-Saldo em conta: {{balance}}
+    <p><b>Saldo total em conta:</b> {{balance}}</p>
+</body>

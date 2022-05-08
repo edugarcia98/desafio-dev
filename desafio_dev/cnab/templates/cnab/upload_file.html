@@ -1,14 +1,61 @@
-<h1>CNAB Import</h1>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-<form method="post", enctype="multipart/form-data">
-    {% csrf_token %}
+    body {
+        background-color: #ededed;
+    }
 
-    {% if cnab_file %}
-    <script>alert("File uploaded!")</script>
-    {% endif %}
+    h1 {
+        text-align: center;
+    }
 
-    <input type="file" id="cnab-file", name="cnab-file">
-    <br>
-    <br>
-    <button type="submit">Import</button>
-</form>
+    div {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    #file-div {
+        width: 40%;
+        display: inline-block;
+        border: 1px solid #2e2e2e;
+        border-radius: 2px;
+        padding: 20px 100px;
+        text-align: left;
+    }
+
+    button[type="submit"] {
+        background-color: #3958ad;
+        color: #e0e0e0;
+        padding: 20px 10px;
+        width: 200px;
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 60px;
+        font-weight: 600;
+        font-size: 20px;
+        border: none;
+        text-align: center;
+    }
+
+</style>
+
+<body>
+    <h1>CNAB Import</h1>
+
+    <form method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% if cnab_file %}
+        <script>alert("File uploaded!")</script>
+        {% endif %}
+
+        <div>
+            <div id="file-div">
+                <input type="file" id="cnab-file", name="cnab-file">
+            </div>
+            <button type="submit">IMPORT</button>
+        </div>
+    </form>
+</body>
