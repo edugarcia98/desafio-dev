@@ -28,9 +28,6 @@ python manage.py migrate
 docker exec -t -i desafio-dev_web_1 bash 
 # acessar o container
 
-cd desafio_dev/ 
-# acessar o diretório desafio_dev
-
 python manage.py createsuperuser 
 # criar um super usuário para acessar o admin do Django
 
@@ -57,4 +54,17 @@ URL para exibição de lista de operações importadas por loja
 > Para cada loja é gerado um [slug](https://pt.wikipedia.org/wiki/Slug_%28programa%C3%A7%C3%A3o%29), portanto, é necessário informá-lo na URL também
 ```
 http://localhost:8000/cnab/operations/slug-da-loja/
+```
+
+## Testes unitários
+Para executar os testes unitários, basta executar os seguintes comandos:
+```shell
+docker exec -t -i desafio-dev_web_1 bash 
+# acessar o container
+
+cd desafio_dev/ 
+# acessar o diretório desafio_dev
+
+python manage.py test
+# executar os testes unitários
 ```
