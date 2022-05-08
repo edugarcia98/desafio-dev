@@ -28,6 +28,9 @@ python manage.py migrate
 docker exec -t -i desafio-dev_web_1 bash 
 # acessar o container
 
+cd desafio_dev/ 
+# acessar o diretório desafio_dev
+
 python manage.py createsuperuser 
 # criar um super usuário para acessar o admin do Django
 
